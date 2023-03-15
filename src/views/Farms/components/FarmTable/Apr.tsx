@@ -9,7 +9,6 @@ import { Skeleton } from '@ebitempuraswap/ebitempura-swap-uikit'
 
 export interface AprProps {
   value: string
-  multiplier?: string
   lpLabel: string
   tokenAddress?: Address
   quoteTokenAddress?: Address
@@ -43,7 +42,6 @@ const AprWrapper = styled.div`
 const Apr: React.FC<AprProps> = ({
   value,
   lpLabel,
-  multiplier,
   tokenAddress,
   quoteTokenAddress,
   cakePrice,
@@ -52,7 +50,6 @@ const Apr: React.FC<AprProps> = ({
 }) => {
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAddress, tokenAddress })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
-
   return originalValue !== 0 ? (
     <Container>
       {originalValue ? (
